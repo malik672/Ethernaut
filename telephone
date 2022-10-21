@@ -1,0 +1,7 @@
+contract Telephone {
+   function changeOwner(address payable _to, address owner) public {
+     (bool success, bytes memory data) = _to.delegatecall(
+        abi.encodeWithSignature("changeOwner(address)", owner)
+     );
+   }
+}
