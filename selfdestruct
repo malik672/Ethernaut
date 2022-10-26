@@ -1,0 +1,7 @@
+contract destroy {
+    function selfDestruct(address _addr) public payable {
+        // cast address to payable
+        address payable addr = payable(address(_addr));
+        selfdestruct(addr);
+    }
+}
